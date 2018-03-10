@@ -1,0 +1,117 @@
+<?php session_start(); 
+header("Content-type: text/css; charset: UTF-8");
+?>
+body {
+	background-color:black;
+	color:lime;
+	font-family:ubuntu, helvetica, sans-serif;
+}
+.logo {
+	width:80%;
+}
+a {
+	text-decoration:none;
+	color:lime;
+	font-weight:bold;
+}
+.nav {
+	text-align:center;
+}
+.nav a {
+	margin-right:0.2em;
+	margin-left:0.2em;
+	padding:0.2em;
+}
+.selected {
+	border-bottom:1px solid lime;
+	border-radius:0.1em;
+}
+.content {
+	margin-top:1em;
+	color:white;
+	background-color:#002200;
+	border-radius:0.2em;
+	border:1px solid lime;
+	padding:0.5em;
+	<?php if($_SESSION['first']){ ?>
+	animation-name:anim;
+	animation-duration:5s;
+	animation-iteration-count:1; <?php } ?>
+}
+.UIButton {
+	color:lime;
+	background-color:transparent;
+	border-radius:0.2em;
+	padding:1em;
+	border:1px solid lime;
+	width:80%;
+}
+.privkey {
+	color:lime;
+	border:1px solid lime;
+	background-color:#663300;
+	word-wrap:break-word;
+	font-family:monospace;
+	text-align:center;
+	padding:0.5em;
+}
+.address {
+	color:lime;
+	border:1px solid lime;
+	background-color:#003300;
+	word-wrap:break-word;
+	font-family:monospace;
+	text-align:center;
+	padding:0.5em;
+}
+#map {
+	height: 400px;
+	width: 100%;
+}
+.pac-container {
+	background-color:#004400;
+	border:1px solid lime;
+}
+.pac-item-query {
+	color:lime;
+}
+.pac-item {
+	border:none;
+}
+
+
+<?php if($_SESSION['first']){ ?>
+
+.loading {
+	width:100%;
+	background-color:#001800;
+	position:fixed;
+	height:100%;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	right:0px;
+	padding-top:5em;
+	z-index:100;
+}
+.loading center h1 {
+	color:white;
+}
+.loadspin {
+	width:20%;
+	animation-name:spin;
+	animation-iteration-count:infinite;
+	animation-duration:1s;
+}
+@-webkit-keyframes spin {
+	0%{transform:rotate(0deg);}
+	10%{transform:rotate(0deg);}
+	90%{transform:rotate(360deg);}
+	100%{transform:rotate(360deg);}
+}
+@-webkit-keyframes anim {
+	from{background-color:black;}
+	to{background-color:#002200;}
+}
+
+<?php } ?>
