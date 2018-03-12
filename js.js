@@ -35,3 +35,7 @@ $(document).ready(function(){
 	});
 });
 
+function getAddress(pseed){
+	// should generate a Bitcoin private key and address
+	// based on the input
+}
